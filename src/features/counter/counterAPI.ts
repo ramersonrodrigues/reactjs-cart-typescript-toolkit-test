@@ -4,3 +4,12 @@ export function fetchCount(amount = 1) {
     setTimeout(() => resolve({ data: amount }), 500)
   );
 }
+
+export function fetchProducts(page = 1) {
+  fetch("https://mks-frontend-challenge-api.herokuapp.com/api/v1/products?page=1&rows=5&sortBy=name&orderBy=ASC")
+    .then((response) => {
+      console.log("response", response)
+    }).catch(error => {
+      console.log("Error", error)
+    })
+}
